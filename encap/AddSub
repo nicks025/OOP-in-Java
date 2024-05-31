@@ -1,0 +1,34 @@
+package encap;
+
+public class AddSub {
+    private encapValue values;
+
+    public AddSub(encapValue values) {
+        this.values = values;
+    }
+
+    public int add() {
+        return values.getNum1() + values.getNum2();
+    }
+
+    public int subtract() {
+        return values.getNum1() - values.getNum2();
+    }
+
+    public static void main(String[] args) {
+        encapValue values = new encapValue();
+        values.setNum1(10);
+        values.setNum2(5);
+
+        AddSub addSub = new AddSub(values);
+
+        System.out.println("Addition: " + addSub.add());
+        System.out.println("Subtraction: " + addSub.subtract());
+
+        values.setNum1(20);
+        values.setNum2(10);
+
+        System.out.println("Addition: " + addSub.add());
+        System.out.println("Subtraction: " + addSub.subtract());
+    }
+}
